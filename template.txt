@@ -1,0 +1,15 @@
+const fs = require("fs");
+const filePath = process.platform === "linux" ? "/dev/stdin" : "./input.txt";
+const stdin = fs
+  .readFileSync(filePath)
+  .toString()
+  .split("\n")
+  .map((line) => line.trim());
+
+const input = (() => {
+  let line = 0;
+  return () => stdin[line++];
+})();
+
+const solution = () => {};
+solution();
